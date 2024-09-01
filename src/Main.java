@@ -9,7 +9,7 @@ import java.nio.file.Files;
 
 /**
  * @author Joseph Kainda Tshava
- * @version P03
+ * @version WebServer
  */
 public class Main {
     static ServerSocket serverSocket;
@@ -21,8 +21,6 @@ public class Main {
             while (true) {// infinite loop awaiting client connection
                 clientSocket = serverSocket.accept(); System.out.print("\nConnection established ");
 
-
-                // TODO : handle client thread connection
 
                 Main main = new Main();
                 Main.ClientThread client = new ClientThread(clientSocket);
@@ -47,7 +45,7 @@ public class Main {
         public ClientThread(Socket clientSocket) {
             this.clientSocket = clientSocket;
         }
-        // Firstly a method to obtains file type
+        // Method obtaining file type
         private String getFile(File file) {
             String name = file.getName();
             if (name.endsWith(".html")) return "text/html";
