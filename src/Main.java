@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.nio.file.Files;
 
 /**
- * @author Joseph Kainda Tshava
+ * @author Joseph
  * @version WebServer
  */
 public class Main {
