@@ -14,7 +14,8 @@ import java.nio.file.Files;
 public class Main {
     static ServerSocket serverSocket;
     static Socket clientSocket;
-    public static void main(String[] args) { // application entry point
+    
+    public static void main(String[] args) { 
         try {
             serverSocket = new ServerSocket(4321); // Establishing connection on port 4321
             System.out.println("\nEstablishing connection to web server (port : 4321)\r\nTry \"http://localhost:4321/Joburg.html\"\n");
@@ -37,6 +38,7 @@ public class Main {
         }
 
     }
+    
     // Class handles client threads
     static class ClientThread extends Thread {
         private final Socket clientSocket;
@@ -103,7 +105,7 @@ public class Main {
                 }
             }
         }
-        // Bonus for video streaming
+        // Video streaming and download 
         private String video() {
             return "<html><body><video width=\"640\" height=\"480\" controls>" +
                "  <source src=\"video.mp4\" type=\"video/mp4\">" +
